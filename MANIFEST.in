@@ -1,0 +1,4 @@
+include zipfile-2.6.5.patch
+include czipfile.c
+include LICENSE
+include MANIFEST.in

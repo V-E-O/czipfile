@@ -16,7 +16,7 @@ except ImportError:
     crc32 = binascii.crc32
 
 __all__ = ["BadZipfile", "error", "ZIP_STORED", "ZIP_DEFLATED", "is_zipfile",
-           "ZipInfo", "ZipFile", "PyZipFile", "LargeZipFile" ]
+           "ZipInfo", "ZipFile", "PyZipFile", "LargeZipFile", "ApkFile" ]
 
 class BadZipfile(Exception):
     pass

@@ -28,7 +28,7 @@ def read(fname):
 
 setup(
     name = 'czipfile',
-    version = '1.0.0',
+    version = '1.0.1',
     author = 'Python distribution, modified by CJ Kucera',
     author_email = 'pez@apocalyptech.com',
     description = ('A replacement for the builtin zipfile module, with '

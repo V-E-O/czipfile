@@ -1,4 +1,3 @@
-include zipfile-2.6.5.patch
-include czipfile.c
+include czipfile.pyx
 include LICENSE
 include MANIFEST.in

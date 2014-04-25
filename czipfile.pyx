@@ -1481,14 +1481,29 @@ class PyZipFile(ZipFile):
 
 
 class ApkFile(ZipFile):
-    def extract(self, member, path=None, pwd=None):
+    """ APK ZipFile wrapper, make some fix
+    """
+    
+    def fix(member):
         if not isinstance(member, ZipInfo):
             member = self.getinfo(member)
         member.flag_bits ^= member.flag_bits % 2
+        return member
+
+    def extract(self, member, path=None, pwd=None):
+        member = self.fix(member)
         ZipFile.extract(self, member, path, pwd)
 
     def extractall(self, path=None, members=None, pwd=None):
         map(lambda entry: self.extract(entry, path, pwd), members if members is not None and len(members) > 0 else self.filelist)
+
+    def open(self, name, mode="r", pwd=None):
+        name = self.fix(name)
+        ZipFile.open(self, name, mode, pwd)
+
+    def read(self, name, pwd=None):
+        name = self.fix(name)
+        ZipFile.read(self, name, pwd)
 
 
 def main(args = None):

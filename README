@@ -1,6 +1,10 @@
+Update code base to zipfile in Python 2.7 repo (http://hg.python.org/cpython/file/2.7/Lib/zipfile.py)
+
+V.E.O
+
 czipfile is a replacement for Python's builtin "zipfile" module, and
 provides much faster, C-based zipfile decryption.  The code is actually
-95% identical to Python 2.6.5's Lib/zipfile.py, with some very minor
+95% identical to Python 2.7's Lib/zipfile.py, with some very minor
 modifications to allow it to compile in Cython, and the _ZipDecrypter
 class adapted to take advantage of native C datatypes.
 
@@ -16,10 +20,7 @@ Cython is not required to build the extension, though if you want to make
 any changes you'll want to edit the .pyx and install Cython rather than
 trying to edit the generated .c file.
 
-Included in the source distribution is a patch versus Python 2.6.5's
-Lib/zipfile.py which can be used to create czipfile.pyx, if you want.
-
-This package might require Python 2.6; I haven't tested it in earlier
+This package might require Python 2.7; I haven't tested it in earlier
 Python versions.
 
 I've put this release under the Python Software Foundation License,

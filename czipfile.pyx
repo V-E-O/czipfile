@@ -1484,7 +1484,7 @@ class ApkFile(ZipFile):
     """ APK ZipFile wrapper, make some fix
     """
     
-    def fix(member):
+    def fix(self, member):
         if not isinstance(member, ZipInfo):
             member = self.getinfo(member)
         member.flag_bits ^= member.flag_bits % 2
